@@ -21,4 +21,25 @@ class MonthData(val month: Month, val year: Year) {
         }
         return null
     }
+
+    fun nextMonth(): MonthData {
+        val auxMonth = this.month.next()
+        return if (auxMonth != null)
+            MonthData(auxMonth, this.year)
+        else
+            MonthData(Month.JANUARY, this.year.next())
+    }
+
+
+    fun previousMonth(): MonthData {
+        val auxMonth = this.month.previous()
+        return if (auxMonth != null)
+            MonthData(auxMonth, this.year)
+        else
+            MonthData(Month.DECEMBER, this.year.previous())
+    }
+
+    override fun toString(): String {
+        return month.toString() + ", " + year.toString()
+    }
 }

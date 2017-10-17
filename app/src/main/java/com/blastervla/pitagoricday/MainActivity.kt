@@ -17,5 +17,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         monthView = MonthView(applicationContext, MonthData(Month.AUGUST, Year(2017)))
         rootLayout.addView(monthView)
+
+        btnNextMonth.setOnClickListener {
+            monthView!!.next()
+            lblCurrentMonth.text = monthView!!.monthData.toString()
+        }
+
+        btnPrevMonth.setOnClickListener {
+            monthView!!.previous()
+            lblCurrentMonth.text = monthView!!.monthData.toString()
+        }
     }
+
+
 }

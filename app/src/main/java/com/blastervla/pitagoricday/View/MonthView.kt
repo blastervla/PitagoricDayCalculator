@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.view.View
 import android.widget.LinearLayout
+import com.blastervla.pitagoricday.Date.Month
 import com.blastervla.pitagoricday.Date.WeekDay
 import com.blastervla.pitagoricday.Model.DayData
 import com.blastervla.pitagoricday.Model.MonthData
@@ -15,7 +16,7 @@ import org.jetbrains.anko.dip
  * Created by blastervla on 10/12/17.
  */
 
-class MonthView(val ctx: Context, val monthData: MonthData) : LinearLayout(ctx) {
+class MonthView(val ctx: Context, var monthData: MonthData) : LinearLayout(ctx) {
     private var linearLayouts: ArrayList<LinearLayout> = ArrayList()
 
     init {
@@ -24,6 +25,7 @@ class MonthView(val ctx: Context, val monthData: MonthData) : LinearLayout(ctx) 
     }
 
     private fun fillView() {
+        clearView()
 
         var dayData: DayData? = monthData.nextDay()
         var currentDay = WeekDay.SUNDAY
@@ -37,7 +39,6 @@ class MonthView(val ctx: Context, val monthData: MonthData) : LinearLayout(ctx) 
 
         while (dayData != null) {
             linearLayouts.last().addView(DayView(ctx, dayData.pitagoricOffset))
-
 
             dayData = monthData.nextDay()
             if (dayData != null) {
@@ -62,5 +63,20 @@ class MonthView(val ctx: Context, val monthData: MonthData) : LinearLayout(ctx) 
     private fun addLinearLayout() {
         linearLayouts.add(LinearLayout(ctx))
         linearLayouts.last().orientation = HORIZONTAL
+    }
+
+    fun next() {
+        this.monthData = monthData.nextMonth()
+        fillView()
+    }
+
+    fun previous() {
+        this.monthData = monthData.previousMonth()
+        fillView()
+    }
+
+    private fun clearView() {
+        this.removeAllViews()
+        this.linearLayouts = ArrayList()
     }
 }
