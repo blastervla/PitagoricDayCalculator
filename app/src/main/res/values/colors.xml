@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <array name="dayColors">
+        <item>#f1f1bb</item>
+        <item>#edf985</item>
+        <item>#d3f548</item>
+        <item>#a4ef3b</item>
+        <item>#65bc22</item>
+        <item>#148304</item>
+        <item>#1abc78</item>
+        <item>#2db7a7</item>
+        <item>#2ce1e4</item>
+        <item>#89eef7</item>
+        <item>#b7f2f7</item>
+        <item>#FFFFFF</item>
+    </array>
+</resources>
