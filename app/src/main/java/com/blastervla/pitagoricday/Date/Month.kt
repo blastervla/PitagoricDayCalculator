@@ -36,7 +36,7 @@ enum class Month(i: Int) {
      * December)
      */
     fun next(): Month? {
-        return if (this.ordinal < 12) Month.values()[this.ordinal + 1] else null
+        return if (this.ordinal < 11) Month.values()[this.ordinal + 1] else null
     }
 
     /**
@@ -44,7 +44,7 @@ enum class Month(i: Int) {
      * month is January)
      */
     fun previous(): Month? {
-        return if (this.ordinal > 1) Month.values()[this.ordinal - 1] else null
+        return if (this.ordinal > 0) Month.values()[this.ordinal - 1] else null
     }
 
     override fun toString(): String {

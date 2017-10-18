@@ -2,6 +2,10 @@ package com.blastervla.pitagoricday
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import android.widget.LinearLayout
+import android.widget.Space
 import com.blastervla.pitagoricday.Date.Month
 import com.blastervla.pitagoricday.Date.Year
 import com.blastervla.pitagoricday.Model.MonthData
@@ -16,7 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         monthView = MonthView(applicationContext, MonthData(Month.AUGUST, Year(2017)))
-        rootLayout.addView(monthView)
+        rootLayout.addView(monthView, rootLayout.childCount - 1)
+        lblCurrentMonth.text = "August, 2017"
 
         btnNextMonth.setOnClickListener {
             monthView!!.next()

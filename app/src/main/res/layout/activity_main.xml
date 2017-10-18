@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.blastervla.pitagoricday.MainActivity"
-    android:id="@+id/rootLayout">
+    android:id="@+id/rootLayout"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,6 +35,124 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_keyboard_arrow_right_green_800_24dp"
             android:layout_weight="0"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/colorParameterLayout">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayMinus5"
+            android:layout_weight="1"
+            android:text="-5"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayMinus4"
+            android:layout_weight="1"
+            android:text="-4"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayMinus3"
+            android:layout_weight="1"
+            android:text="-3"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayMinus2"
+            android:layout_weight="1"
+            android:text="-2"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayMinus1"
+            android:layout_weight="1"
+            android:text="-1"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayPitagoric"
+            android:layout_weight="1"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayPlus1"
+            android:layout_weight="1"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayPlus2"
+            android:layout_weight="1"
+            android:text="2"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayPlus3"
+            android:layout_weight="1"
+            android:text="3"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayPlus4"
+            android:layout_weight="1"
+            android:text="4"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorDayPlus5"
+            android:layout_weight="1"
+            android:text="5"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
     </LinearLayout>
 
 </LinearLayout>
