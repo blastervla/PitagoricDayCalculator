@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.view.View
+import android.widget.GridLayout
 import android.widget.LinearLayout
 import com.blastervla.pitagoricday.Date.Month
 import com.blastervla.pitagoricday.Date.WeekDay
