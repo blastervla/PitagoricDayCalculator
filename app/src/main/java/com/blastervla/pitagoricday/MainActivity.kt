@@ -1,16 +1,13 @@
 package com.blastervla.pitagoricday
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ViewGroup.LayoutParams.MATCH_PARENT
-import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-import android.widget.LinearLayout
-import android.widget.Space
+import android.support.v7.app.AppCompatActivity
 import com.blastervla.pitagoricday.Date.Month
 import com.blastervla.pitagoricday.Date.Year
 import com.blastervla.pitagoricday.Model.MonthData
 import com.blastervla.pitagoricday.View.MonthView
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 

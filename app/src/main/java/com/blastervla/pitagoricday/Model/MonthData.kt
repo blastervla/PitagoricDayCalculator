@@ -1,6 +1,7 @@
 package com.blastervla.pitagoricday.Model
 
 import com.blastervla.pitagoricday.Date.Month
+import com.blastervla.pitagoricday.Date.WeekDay
 import com.blastervla.pitagoricday.Date.Year
 
 /**
@@ -8,8 +9,14 @@ import com.blastervla.pitagoricday.Date.Year
  */
 
 class MonthData(val month: Month, val year: Year) {
-    private val dayAmount = month.length(year.isLeap())
+    val dayAmount = month.length(year.isLeap())
     private var dayIndex = 0
+
+    val extraCalendarWeekDays: Int get() {
+        val firstWeekDay = DayData(0, month.ordinal + 1, year.number).weekDay
+        var currWeekDay = WeekDay.SUNDAY
+        return firstWeekDay.ordinal - WeekDay.SUNDAY.ordinal
+    }
 
     /**
      * Returns the next day of the month. May return null if there is no next day available.

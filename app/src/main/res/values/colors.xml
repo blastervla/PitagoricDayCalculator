@@ -18,7 +18,7 @@
     <color name="colorDayPlus4">#89eef7</color>
     <color name="colorDayPlus5">#b7f2f7</color>
 
-    <color name="colorDayNormal">#FFFFFF</color>
+    <color name="colorDayNormal">#fffcf5</color>
 
     <array name="dayColors">
         <item>@color/colorDayMinus5</item>

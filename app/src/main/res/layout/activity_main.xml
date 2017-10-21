@@ -1,53 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.blastervla.pitagoricday.MainActivity"
-    android:id="@+id/rootLayout"
-    android:orientation="vertical">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/rootLayout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.blastervla.pitagoricday.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
+
         <ImageButton
             android:id="@+id/btnPrevMonth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_keyboard_arrow_left_green_800_24dp"
-            android:layout_weight="0"/>
+            android:layout_weight="0"
+            android:src="@drawable/ic_keyboard_arrow_left_green_800_24dp"/>
 
         <TextView
             android:id="@+id/lblCurrentMonth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginTop="5dp"
-            android:textSize="24sp"
+            android:layout_weight="1"
             android:textAlignment="center"
+            android:textSize="24sp"
             tools:text="August, 2017"/>
 
         <ImageButton
             android:id="@+id/btnNextMonth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_keyboard_arrow_right_green_800_24dp"
-            android:layout_weight="0"/>
+            android:layout_weight="0"
+            android:src="@drawable/ic_keyboard_arrow_right_green_800_24dp"/>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/colorParameterLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/colorParameterLayout">
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayMinus5"
             android:layout_weight="1"
+            android:background="@color/colorDayMinus5"
             android:text="-5"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -56,8 +58,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayMinus4"
             android:layout_weight="1"
+            android:background="@color/colorDayMinus4"
             android:text="-4"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -66,8 +68,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayMinus3"
             android:layout_weight="1"
+            android:background="@color/colorDayMinus3"
             android:text="-3"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -76,8 +78,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayMinus2"
             android:layout_weight="1"
+            android:background="@color/colorDayMinus2"
             android:text="-2"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -86,8 +88,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayMinus1"
             android:layout_weight="1"
+            android:background="@color/colorDayMinus1"
             android:text="-1"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -96,8 +98,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayPitagoric"
             android:layout_weight="1"
+            android:background="@color/colorDayPitagoric"
             android:text="0"
             android:textAlignment="center"
             android:textColor="@android:color/white"
@@ -106,8 +108,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayPlus1"
             android:layout_weight="1"
+            android:background="@color/colorDayPlus1"
             android:text="1"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -116,8 +118,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayPlus2"
             android:layout_weight="1"
+            android:background="@color/colorDayPlus2"
             android:text="2"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -126,8 +128,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayPlus3"
             android:layout_weight="1"
+            android:background="@color/colorDayPlus3"
             android:text="3"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -136,8 +138,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayPlus4"
             android:layout_weight="1"
+            android:background="@color/colorDayPlus4"
             android:text="4"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -146,8 +148,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="25dp"
-            android:background="@color/colorDayPlus5"
             android:layout_weight="1"
+            android:background="@color/colorDayPlus5"
             android:text="5"
             android:textAlignment="center"
             android:textColor="@android:color/black"

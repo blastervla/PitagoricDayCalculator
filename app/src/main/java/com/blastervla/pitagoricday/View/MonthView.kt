@@ -3,7 +3,11 @@ package com.blastervla.pitagoricday.View
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.Point
+import android.os.Build
 import android.view.View
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.GridLayout
 import android.widget.LinearLayout
 import com.blastervla.pitagoricday.Date.Month
@@ -12,13 +16,20 @@ import com.blastervla.pitagoricday.Model.DayData
 import com.blastervla.pitagoricday.Model.MonthData
 import org.jetbrains.anko.childrenSequence
 import org.jetbrains.anko.dip
+import android.view.Display
+import android.view.Gravity
+import android.view.WindowManager
+import android.widget.TextView
+import org.jetbrains.anko.sp
+
 
 /**
  * Created by blastervla on 10/12/17.
  */
 
 class MonthView(val ctx: Context, var monthData: MonthData) : LinearLayout(ctx) {
-    private var linearLayouts: ArrayList<LinearLayout> = ArrayList()
+    private var gridLayout: GridLayout? = null
+    private var screenSize: Point = Point()
 
     init {
         this.orientation = VERTICAL
@@ -31,26 +42,37 @@ class MonthView(val ctx: Context, var monthData: MonthData) : LinearLayout(ctx) 
         var dayData: DayData? = monthData.nextDay()
         var currentDay = WeekDay.SUNDAY
 
-        addLinearLayout()
-
         while (dayData!!.weekDay < currentDay) {
-            linearLayouts.last().addView(emptyView())
+            gridLayout!!.addView(emptyView())
             currentDay = currentDay.nextDay()
         }
 
+        var i = 7
+        var c = 0
+        var r = 1
+
         while (dayData != null) {
-            linearLayouts.last().addView(DayView(ctx, dayData.pitagoricOffset))
+            if (c == gridLayout!!.columnCount){
+                c = 0
+                r++
+            }
+
+            val toAdd = DayView(ctx, dayData)
+            gridLayout!!.addView(toAdd, i)
+            val params = GridLayout.LayoutParams()
+
+            params.width = screenSize.x / 7
+            params.height = params.width
+            params.columnSpec = GridLayout.spec(c)
+            params.rowSpec = GridLayout.spec(r)
+
+            toAdd.layoutParams = params
 
             dayData = monthData.nextDay()
-            if (dayData != null) {
-                if (dayData.weekDay == WeekDay.SUNDAY) {
-                    this.addView(linearLayouts.last())
-                    addLinearLayout()
-                }
-
-            }
+            i++
+            c++
         }
-        this.addView(linearLayouts.last())
+        this.addView(gridLayout)
     }
 
     private fun emptyView(): View {
@@ -59,11 +81,6 @@ class MonthView(val ctx: Context, var monthData: MonthData) : LinearLayout(ctx) 
         (toReturn.layoutParams as (LinearLayout.LayoutParams)).weight = 1f
         toReturn.setBackgroundColor(Color.WHITE)
         return toReturn
-    }
-
-    private fun addLinearLayout() {
-        linearLayouts.add(LinearLayout(ctx))
-        linearLayouts.last().orientation = HORIZONTAL
     }
 
     fun next() {
@@ -77,7 +94,40 @@ class MonthView(val ctx: Context, var monthData: MonthData) : LinearLayout(ctx) 
     }
 
     private fun clearView() {
+        this.minimumHeight = this.height
+        this.minimumWidth = this.height
         this.removeAllViews()
-        this.linearLayouts = ArrayList()
+        gridLayout = GridLayout(ctx)
+        gridLayout!!.columnCount = 7
+        gridLayout!!.alignmentMode = GridLayout.ALIGN_BOUNDS
+        val days = ((monthData.dayAmount + monthData.extraCalendarWeekDays))
+        gridLayout!!.rowCount = if(days % 7 == 0) days / 7 + 1 else days / 7 + 2
+
+        addWeekDayLabels()
+    }
+
+    private fun addWeekDayLabels() {
+        val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val display = wm.defaultDisplay
+        display.getSize(screenSize)
+
+        var i = 0
+        WeekDay.abbreviatedStrings().forEach {
+            val lblWeekDay = TextView(ctx)
+            lblWeekDay.text = it
+            lblWeekDay.textSize = sp(7).toFloat()
+            gridLayout!!.addView(lblWeekDay, i)
+
+            val params = GridLayout.LayoutParams()
+            params.width = screenSize.x / 7
+            params.height = dip(25)
+            params.setGravity(Gravity.CENTER)
+            params.rowSpec = GridLayout.spec(0)
+            params.columnSpec = GridLayout.spec(i)
+
+            lblWeekDay.layoutParams = params
+
+            i++
+        }
     }
 }
