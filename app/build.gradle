@@ -37,4 +37,7 @@ dependencies {
 
     // Anko Commons
     compile "org.jetbrains.anko:anko-commons:$anko_version"
+
+    // Stetho
+    compile 'com.facebook.stetho:stetho:1.5.0'
 }

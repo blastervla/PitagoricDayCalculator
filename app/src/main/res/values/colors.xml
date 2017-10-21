@@ -4,18 +4,34 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="colorDayMinus5">#f1f1bb</color>
+    <color name="colorDayMinus4">#edf985</color>
+    <color name="colorDayMinus3">#d3f548</color>
+    <color name="colorDayMinus2">#a4ef3b</color>
+    <color name="colorDayMinus1">#65bc22</color>
+
+    <color name="colorDayPitagoric">#148304</color>
+
+    <color name="colorDayPlus1">#1abc78</color>
+    <color name="colorDayPlus2">#2db7a7</color>
+    <color name="colorDayPlus3">#2ce1e4</color>
+    <color name="colorDayPlus4">#89eef7</color>
+    <color name="colorDayPlus5">#b7f2f7</color>
+
+    <color name="colorDayNormal">#fffcf5</color>
+
     <array name="dayColors">
-        <item>#f1f1bb</item>
-        <item>#edf985</item>
-        <item>#d3f548</item>
-        <item>#a4ef3b</item>
-        <item>#65bc22</item>
-        <item>#148304</item>
-        <item>#1abc78</item>
-        <item>#2db7a7</item>
-        <item>#2ce1e4</item>
-        <item>#89eef7</item>
-        <item>#b7f2f7</item>
-        <item>#FFFFFF</item>
+        <item>@color/colorDayMinus5</item>
+        <item>@color/colorDayMinus4</item>
+        <item>@color/colorDayMinus3</item>
+        <item>@color/colorDayMinus2</item>
+        <item>@color/colorDayMinus1</item>
+        <item>@color/colorDayPitagoric</item>
+        <item>@color/colorDayPlus1</item>
+        <item>@color/colorDayPlus2</item>
+        <item>@color/colorDayPlus3</item>
+        <item>@color/colorDayPlus4</item>
+        <item>@color/colorDayPlus5</item>
+        <item>@color/colorDayNormal</item>
     </array>
 </resources>

@@ -43,5 +43,9 @@ enum class WeekDay(i: Int) {
                 else -> SUNDAY
             }
         }
+
+        fun abbreviatedStrings(): Array<String>{
+            return arrayOf("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT")
+        }
     }
 }

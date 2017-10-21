@@ -30,4 +30,24 @@ enum class Month(i: Int) {
             else -> 31
         }
     }
+
+    /**
+     * Returns the next month. Returns null if there is no next month (A.K.A when current month is
+     * December)
+     */
+    fun next(): Month? {
+        return if (this.ordinal < 11) Month.values()[this.ordinal + 1] else null
+    }
+
+    /**
+     * Returns the previous month. Returns null if there is no previous month (A.K.A when current
+     * month is January)
+     */
+    fun previous(): Month? {
+        return if (this.ordinal > 0) Month.values()[this.ordinal - 1] else null
+    }
+
+    override fun toString(): String {
+        return this.name.toLowerCase().capitalize()
+    }
 }
