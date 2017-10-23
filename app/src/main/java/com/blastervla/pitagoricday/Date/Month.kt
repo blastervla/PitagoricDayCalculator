@@ -1,5 +1,8 @@
 package com.blastervla.pitagoricday.Date
 
+import android.content.Context
+import com.blastervla.pitagoricday.R
+
 /**
  * Created by blastervla on 10/15/17.
  */
@@ -48,6 +51,23 @@ enum class Month(i: Int) {
     }
 
     override fun toString(): String {
-        return this.name.toLowerCase().capitalize()
+        return super.toString()
+    }
+
+    fun toString(context: Context): String {
+        return when(this) {
+            JANUARY -> context.resources.getString(R.string.month_jan)
+            FEBRUARY -> context.resources.getString(R.string.month_feb)
+            MARCH -> context.resources.getString(R.string.month_mar)
+            APRIL -> context.resources.getString(R.string.month_apr)
+            MAY -> context.resources.getString(R.string.month_may)
+            JUNE -> context.resources.getString(R.string.month_jun)
+            JULY -> context.resources.getString(R.string.month_jul)
+            AUGUST -> context.resources.getString(R.string.month_aug)
+            SEPTEMBER -> context.resources.getString(R.string.month_sep)
+            OCTOBER -> context.resources.getString(R.string.month_oct)
+            NOVEMBER -> context.resources.getString(R.string.month_nov)
+            DECEMBER -> context.resources.getString(R.string.month_dec)
+        }
     }
 }

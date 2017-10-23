@@ -105,7 +105,7 @@ class MonthView(val ctx: Context, var monthData: MonthData) : LinearLayout(ctx) 
         display.getSize(screenSize)
 
         var i = 0
-        WeekDay.abbreviatedStrings().forEach {
+        WeekDay.abbreviatedStrings(context).forEach {
             val lblWeekDay = TextView(ctx)
             lblWeekDay.text = it
             lblWeekDay.textSize = sp(7).toFloat()

@@ -1,5 +1,9 @@
 package com.blastervla.pitagoricday.Date
 
+import android.content.Context
+import com.blastervla.pitagoricday.R
+import java.util.*
+
 /**
  * Created by blastervla on 10/15/17.
  */
@@ -44,8 +48,15 @@ enum class WeekDay(i: Int) {
             }
         }
 
-        fun abbreviatedStrings(): Array<String>{
-            return arrayOf("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT")
+        fun abbreviatedStrings(context: Context): Array<String>{
+            return arrayOf(
+                    context.resources.getString(R.string.weekday_sun),
+                    context.resources.getString(R.string.weekday_mon),
+                    context.resources.getString(R.string.weekday_tue),
+                    context.resources.getString(R.string.weekday_wed),
+                    context.resources.getString(R.string.weekday_thu),
+                    context.resources.getString(R.string.weekday_fri),
+                    context.resources.getString(R.string.weekday_sat))
         }
     }
 }
