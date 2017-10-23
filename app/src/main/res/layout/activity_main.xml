@@ -172,7 +172,7 @@
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Error Threshold:"
+            android:text="@string/error_threshold"
             android:textSize="18sp" />
 
         <EditText

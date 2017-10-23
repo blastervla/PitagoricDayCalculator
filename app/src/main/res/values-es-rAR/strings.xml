@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculador de Días Pitagóricos</string>
+    <string name="credits">Créditos</string>
+    <string name="temp_string_starting_month">Agosto, 2017</string>
+    <string name="month_jan">Enero</string>
+    <string name="month_feb">Febrero</string>
+    <string name="month_mar">Marzo</string>
+    <string name="month_apr">Abril</string>
+    <string name="month_may">Mayo</string>
+    <string name="month_jun">Junio</string>
+    <string name="month_jul">Julio</string>
+    <string name="month_aug">Agosto</string>
+    <string name="month_sep">Septiembre</string>
+    <string name="month_oct">Octubre</string>
+    <string name="month_nov">Noviembre</string>
+    <string name="month_dec">Diciembre</string>
+    <string name="weekday_sun">DO</string>
+    <string name="weekday_mon">LU</string>
+    <string name="weekday_tue">MA</string>
+    <string name="weekday_wed">MI</string>
+    <string name="weekday_thu">JU</string>
+    <string name="weekday_fri">VI</string>
+    <string name="weekday_sat">SÁ</string>
+    <string name="credits_developer">Vladimir Pomsztein (El Príncipe Vampiro, no Putin)</string>
+    <string name="credits_developed_by">Desarrollado por:</string>
+    <string name="error_threshold">Ventana de Error:</string>
+</resources>

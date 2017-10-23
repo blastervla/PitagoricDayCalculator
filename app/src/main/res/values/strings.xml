@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Pitagoric Day Calculator</string>
+
+    <!-- ============ Credits ============ -->
+    <string name="credits">Credits</string>
+    <string name="credits_developer">Vladimir Pomsztein (The Vampire Prince, not Putin)</string>
+    <string name="credits_developed_by">Developed by:</string>
+
+    <string name="error_threshold">Error Threshold</string>
+    <string name="temp_string_starting_month">August, 2017</string>
+
+    <!-- ============ Months ============ -->
+    <string name="month_jan">January</string>
+    <string name="month_feb">February</string>
+    <string name="month_mar">March</string>
+    <string name="month_apr">April</string>
+    <string name="month_may">May</string>
+    <string name="month_jun">June</string>
+    <string name="month_jul">July</string>
+    <string name="month_aug">August</string>
+    <string name="month_sep">September</string>
+    <string name="month_oct">October</string>
+    <string name="month_nov">November</string>
+    <string name="month_dec">December</string>
+
+    <!-- =========== Weekdays =========== -->
+    <string name="weekday_sun">SUN</string>
+    <string name="weekday_mon">MON</string>
+    <string name="weekday_tue">TUE</string>
+    <string name="weekday_wed">WED</string>
+    <string name="weekday_thu">THU</string>
+    <string name="weekday_fri">FRI</string>
+    <string name="weekday_sat">SAT</string>
 </resources>

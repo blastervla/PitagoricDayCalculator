@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         monthView = MonthView(applicationContext, MonthData(Month.AUGUST, Year(2017)))
         rootLayout.addView(monthView, 1)
-        lblCurrentMonth.text = "August, 2017"
+        lblCurrentMonth.text = getString(R.string.temp_string_starting_month)
 
         btnNextMonth.setOnClickListener {
             monthView!!.next()
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                     padding = dip(25)
                     orientation = LinearLayout.VERTICAL
                     textView {
-                        text = "Developed by: "
+                        text = context.getString(R.string.credits_developed_by)
                         textSize = sp(7).toFloat()
                         setTypeface(typeface, Typeface.BOLD)
                     }
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                         minimumHeight = dip(5)
                     }
                     textView {
-                        text = "Vladimir Pomsztein (The Vampire King, not Putin)"
+                        text = context.getString(R.string.credits_developer)
                         textSize = sp(6.5f).toFloat()
                     }
                 }
