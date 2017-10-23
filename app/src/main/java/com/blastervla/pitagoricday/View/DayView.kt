@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.text.TextPaint
 import android.view.View
-import android.widget.TextView
 import com.blastervla.pitagoricday.Model.DayData
 import com.blastervla.pitagoricday.R
 import org.jetbrains.anko.dip

@@ -1,9 +1,11 @@
 package com.blastervla.pitagoricday
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.KeyEvent
-import android.view.View
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.blastervla.pitagoricday.Date.Month
 import com.blastervla.pitagoricday.Date.Year
@@ -11,7 +13,7 @@ import com.blastervla.pitagoricday.Model.MonthData
 import com.blastervla.pitagoricday.View.DayView
 import com.blastervla.pitagoricday.View.MonthView
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.childrenSequence
+import org.jetbrains.anko.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,8 +23,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         monthView = MonthView(applicationContext, MonthData(Month.AUGUST, Year(2017)))
-        rootLayout.addView(monthView, rootLayout.childCount - 1)
+        rootLayout.addView(monthView, 1)
         lblCurrentMonth.text = "August, 2017"
 
         btnNextMonth.setOnClickListener {
@@ -35,7 +38,20 @@ class MainActivity : AppCompatActivity() {
             lblCurrentMonth.text = monthView!!.monthData.toString()
         }
 
-        txtErrorThreshold.setOnKeyListener({_, _, _ -> updateErrorThreshold()})
+        txtErrorThreshold.setOnKeyListener({ _, _, _ -> updateErrorThreshold() })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.activity_main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        super.onOptionsItemSelected(item)
+        if (item != null && item.itemId == R.id.btnCredits)
+            showCredits()
+        return true
     }
 
     private fun updateErrorThreshold(): Boolean {
@@ -59,5 +75,36 @@ class MainActivity : AppCompatActivity() {
             (it as TextView).text = valueString
             i++
         }
+    }
+
+    private fun showCredits() {
+        alert {
+            title = "Credits"
+
+            customView {
+                linearLayout {
+                    padding = dip(25)
+                    orientation = LinearLayout.VERTICAL
+                    textView {
+                        text = "Developed by: "
+                        textSize = sp(7).toFloat()
+                        setTypeface(typeface, Typeface.BOLD)
+                    }
+                    space {
+                        minimumHeight = dip(5)
+                    }
+                    textView {
+                        text = "Vladimir Pomsztein (The Vampire King, not Putin)"
+                        textSize = sp(6.5f).toFloat()
+                    }
+                }
+            }
+
+            yesButton {
+                it.dismiss()
+            }
+        }.show()
+
+
     }
 }

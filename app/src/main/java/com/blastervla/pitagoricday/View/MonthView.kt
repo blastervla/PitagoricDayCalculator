@@ -1,25 +1,18 @@
 package com.blastervla.pitagoricday.View
 
 import android.content.Context
-import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Point
-import android.os.Build
+import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup.LayoutParams.MATCH_PARENT
-import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import android.view.WindowManager
 import android.widget.GridLayout
 import android.widget.LinearLayout
-import com.blastervla.pitagoricday.Date.Month
+import android.widget.TextView
 import com.blastervla.pitagoricday.Date.WeekDay
 import com.blastervla.pitagoricday.Model.DayData
 import com.blastervla.pitagoricday.Model.MonthData
-import org.jetbrains.anko.childrenSequence
 import org.jetbrains.anko.dip
-import android.view.Display
-import android.view.Gravity
-import android.view.WindowManager
-import android.widget.TextView
 import org.jetbrains.anko.sp
 
 
@@ -52,7 +45,7 @@ class MonthView(val ctx: Context, var monthData: MonthData) : LinearLayout(ctx) 
         var r = 1
 
         while (dayData != null) {
-            if (c == gridLayout!!.columnCount){
+            if (c == gridLayout!!.columnCount) {
                 c = 0
                 r++
             }
@@ -101,7 +94,7 @@ class MonthView(val ctx: Context, var monthData: MonthData) : LinearLayout(ctx) 
         gridLayout!!.columnCount = 7
         gridLayout!!.alignmentMode = GridLayout.ALIGN_BOUNDS
         val days = ((monthData.dayAmount + monthData.extraCalendarWeekDays))
-        gridLayout!!.rowCount = if(days % 7 == 0) days / 7 + 1 else days / 7 + 2
+        gridLayout!!.rowCount = if (days % 7 == 0) days / 7 + 1 else days / 7 + 2
 
         addWeekDayLabels()
     }
