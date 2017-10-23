@@ -1,5 +1,6 @@
 package com.blastervla.pitagoricday.Model
 
+import android.content.Context
 import com.blastervla.pitagoricday.Date.Month
 import com.blastervla.pitagoricday.Date.WeekDay
 import com.blastervla.pitagoricday.Date.Year
@@ -51,7 +52,7 @@ class MonthData(val month: Month, val year: Year) {
         dayIndex = 0
     }
 
-    override fun toString(): String {
-        return month.toString() + ", " + year.toString()
+    fun toString(context: Context): String {
+        return month.toString(context) + ", " + year.toString()
     }
 }

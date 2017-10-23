@@ -50,20 +50,24 @@ enum class Month(i: Int) {
         return if (this.ordinal > 0) Month.values()[this.ordinal - 1] else null
     }
 
+    override fun toString(): String {
+        return super.toString()
+    }
+
     fun toString(context: Context): String {
         return when(this) {
-            JANUARY -> context.getString(R.string.month_jan)
-            FEBRUARY -> context.getString(R.string.month_feb)
-            MARCH -> context.getString(R.string.month_mar)
-            APRIL -> context.getString(R.string.month_apr)
-            MAY -> context.getString(R.string.month_may)
-            JUNE -> context.getString(R.string.month_jun)
-            JULY -> context.getString(R.string.month_jul)
-            AUGUST -> context.getString(R.string.month_aug)
-            SEPTEMBER -> context.getString(R.string.month_sep)
-            OCTOBER -> context.getString(R.string.month_oct)
-            NOVEMBER -> context.getString(R.string.month_nov)
-            DECEMBER -> context.getString(R.string.month_dec)
+            JANUARY -> context.resources.getString(R.string.month_jan)
+            FEBRUARY -> context.resources.getString(R.string.month_feb)
+            MARCH -> context.resources.getString(R.string.month_mar)
+            APRIL -> context.resources.getString(R.string.month_apr)
+            MAY -> context.resources.getString(R.string.month_may)
+            JUNE -> context.resources.getString(R.string.month_jun)
+            JULY -> context.resources.getString(R.string.month_jul)
+            AUGUST -> context.resources.getString(R.string.month_aug)
+            SEPTEMBER -> context.resources.getString(R.string.month_sep)
+            OCTOBER -> context.resources.getString(R.string.month_oct)
+            NOVEMBER -> context.resources.getString(R.string.month_nov)
+            DECEMBER -> context.resources.getString(R.string.month_dec)
         }
     }
 }

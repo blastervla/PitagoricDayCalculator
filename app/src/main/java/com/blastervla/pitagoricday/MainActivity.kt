@@ -30,12 +30,12 @@ class MainActivity : AppCompatActivity() {
 
         btnNextMonth.setOnClickListener {
             monthView!!.next()
-            lblCurrentMonth.text = monthView!!.monthData.toString()
+            lblCurrentMonth.text = monthView!!.monthData.toString(applicationContext)
         }
 
         btnPrevMonth.setOnClickListener {
             monthView!!.previous()
-            lblCurrentMonth.text = monthView!!.monthData.toString()
+            lblCurrentMonth.text = monthView!!.monthData.toString(applicationContext)
         }
 
         txtErrorThreshold.setOnKeyListener({ _, _, _ -> updateErrorThreshold() })
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showCredits() {
         alert {
-            title = "Credits"
+            title = applicationContext.resources.getString(R.string.credits)
 
             customView {
                 linearLayout {
