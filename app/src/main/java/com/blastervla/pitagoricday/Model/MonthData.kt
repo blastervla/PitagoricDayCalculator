@@ -46,6 +46,10 @@ class MonthData(val month: Month, val year: Year) {
             MonthData(Month.DECEMBER, this.year.previous())
     }
 
+    fun reset() {
+        dayIndex = 0
+    }
+
     override fun toString(): String {
         return month.toString() + ", " + year.toString()
     }

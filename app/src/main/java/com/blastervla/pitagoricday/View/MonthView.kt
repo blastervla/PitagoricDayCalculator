@@ -130,4 +130,9 @@ class MonthView(val ctx: Context, var monthData: MonthData) : LinearLayout(ctx) 
             i++
         }
     }
+
+    fun redrawView() {
+        monthData.reset()
+        fillView()
+    }
 }

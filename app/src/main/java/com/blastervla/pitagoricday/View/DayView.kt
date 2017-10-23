@@ -20,6 +20,8 @@ class DayView(private val ctx: Context, private val dayData: DayData) : View(ctx
     companion object {
         val DEFAULT_WIDTH_IN_DIP = 25
         val DEFAULT_HEIGHT_IN_DIP = 25
+
+        var errorThreshold = 1
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -42,7 +44,14 @@ class DayView(private val ctx: Context, private val dayData: DayData) : View(ctx
     }
 
     private fun colorIndexByPitagoricOffset(pitagoricOffset: Int): Int {
-        return if ((pitagoricOffset + 5) > 10 || pitagoricOffset + 5 < 0) 11 else (pitagoricOffset + 5)
+        val processedOffsetFloat: Float = pitagoricOffset.toFloat() / errorThreshold
+        var processedOffset = pitagoricOffset / errorThreshold
+
+        if (pitagoricOffset % errorThreshold != 0) {
+            processedOffset += if (processedOffsetFloat > 0) 1 else -1
+        }
+
+        return if ((processedOffset + 5) > 10 || processedOffset + 5 < 0) 11 else (processedOffset + 5)
     }
 
 
