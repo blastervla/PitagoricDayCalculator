@@ -24,6 +24,8 @@
     <string name="weekday_sat">SÁ</string>
     <string name="credits_developer">Vladimir Pomsztein (El Príncipe Vampiro, no Putin)</string>
     <string name="credits_developed_by">Desarrollado por:</string>
+    <string name="credits_idea_by">Idea original:</string>
+    <string name="credits_ideator">Carlos Borches</string>
     <string name="error_threshold">Ventana de Error:</string>
     <string name="help">Ayuda</string>
     <string name="help_text">Los días pitagóricos se indican con 0. De ahí en adelante, los días son marcados basándose en cuán lejos están de ser pitagóricos (marcado por la "Ventana de Error").\n\nUsar el "termómetro" de color como referencia.</string>

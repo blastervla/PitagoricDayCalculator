@@ -5,6 +5,8 @@
     <string name="credits">Credits</string>
     <string name="credits_developer">Vladimir Pomsztein (The Vampire Prince, not Putin)</string>
     <string name="credits_developed_by">Developed by:</string>
+    <string name="credits_idea_by">Original idea by:</string>
+    <string name="credits_ideator">Carlos Borches</string>
 
     <string name="error_threshold">Error Threshold</string>
     <string name="temp_string_starting_month">August, 2017</string>

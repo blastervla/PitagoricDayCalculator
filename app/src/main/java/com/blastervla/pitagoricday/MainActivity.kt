@@ -92,19 +92,42 @@ class MainActivity : AppCompatActivity() {
 
             customView {
                 linearLayout {
-                    padding = dip(25)
                     orientation = LinearLayout.VERTICAL
-                    textView {
-                        text = context.getString(R.string.credits_developed_by)
-                        textSize = sp(7).toFloat()
-                        setTypeface(typeface, Typeface.BOLD)
+                    padding = dip(25)
+                    linearLayout {
+                        orientation = LinearLayout.VERTICAL
+                        textView {
+                            text = context.getString(R.string.credits_idea_by)
+                            textSize = sp(7).toFloat()
+                            setTypeface(typeface, Typeface.BOLD)
+                        }
+                        space {
+                            minimumHeight = dip(5)
+                        }
+                        textView {
+                            text = context.getString(R.string.credits_ideator)
+                            textSize = sp(6.5f).toFloat()
+                        }
                     }
+
                     space {
-                        minimumHeight = dip(5)
+                        minimumHeight = dip(10)
                     }
-                    textView {
-                        text = context.getString(R.string.credits_developer)
-                        textSize = sp(6.5f).toFloat()
+
+                    linearLayout {
+                        orientation = LinearLayout.VERTICAL
+                        textView {
+                            text = context.getString(R.string.credits_developed_by)
+                            textSize = sp(7).toFloat()
+                            setTypeface(typeface, Typeface.BOLD)
+                        }
+                        space {
+                            minimumHeight = dip(5)
+                        }
+                        textView {
+                            text = context.getString(R.string.credits_developer)
+                            textSize = sp(6.5f).toFloat()
+                        }
                     }
                 }
             }
