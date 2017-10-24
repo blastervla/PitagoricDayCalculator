@@ -3,6 +3,7 @@ package com.blastervla.pitagoricday
 import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.LinearLayout
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             lblCurrentMonth.text = monthView!!.monthData.toString(applicationContext)
         }
 
-        txtErrorThreshold.setOnKeyListener({ _, _, _ -> updateErrorThreshold() })
+        txtErrorThreshold.setOnKeyListener({ _, _, keyEvent: KeyEvent -> updateErrorThreshold(keyEvent) })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -49,23 +50,31 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         super.onOptionsItemSelected(item)
-        if (item != null && item.itemId == R.id.btnCredits)
-            showCredits()
+        if (item != null) {
+            if (item.itemId == R.id.btnHelp)
+                showHelp()
+            else if (item.itemId == R.id.btnCredits)
+                showCredits()
+        }
         return true
     }
 
-    private fun updateErrorThreshold(): Boolean {
+    private fun updateErrorThreshold(keyEvent: KeyEvent): Boolean {
 
-        if (txtErrorThreshold.text.toString() != "" && txtErrorThreshold.text.toString().toInt() != 0) {
-            DayView.errorThreshold = txtErrorThreshold.text.toString().toInt()
-            monthView!!.redrawView()
-        } else {
-            DayView.errorThreshold = 1
+        if (keyEvent.keyCode == KeyEvent.KEYCODE_DEL || (txtErrorThreshold.text.toString() + "0").length < Int.MAX_VALUE.toString().length) {
+            if (txtErrorThreshold.text.toString() != "" && txtErrorThreshold.text.toString().toInt() != 0) {
+                DayView.errorThreshold = txtErrorThreshold.text.toString().toInt()
+                monthView!!.redrawView()
+            } else {
+                DayView.errorThreshold = 1
+            }
+
+            updateColorParameterValues()
+
+            return false
         }
 
-        updateColorParameterValues()
-
-        return false
+        return true
     }
 
     private fun updateColorParameterValues() {
@@ -104,7 +113,26 @@ class MainActivity : AppCompatActivity() {
                 it.dismiss()
             }
         }.show()
+    }
 
+    private fun showHelp() {
+        alert {
+            title = applicationContext.resources.getString(R.string.help)
 
+            customView {
+                linearLayout {
+                    padding = dip(25)
+                    orientation = LinearLayout.VERTICAL
+                    textView {
+                        text = context.getString(R.string.help_text)
+                        textSize = sp(6.5f).toFloat()
+                    }
+                }
+            }
+
+            yesButton {
+                it.dismiss()
+            }
+        }.show()
     }
 }
