@@ -182,6 +182,7 @@
             android:layout_gravity="center"
             android:digits="0123456789"
             android:inputType="number"
+            android:hint="1"
             android:minWidth="50dp" />
     </LinearLayout>
 

@@ -31,4 +31,8 @@
     <string name="weekday_thu">THU</string>
     <string name="weekday_fri">FRI</string>
     <string name="weekday_sat">SAT</string>
+
+    <!-- ============= Help ============= -->
+    <string name="help">Help</string>
+    <string name="help_text">Pitagoric days will be indicated with 0. From there on, days will be marked based on how far they are from being pitagoric days (marked by the "Error Threshold").\n\nUse the given color thermometer as reference</string>
 </resources>
